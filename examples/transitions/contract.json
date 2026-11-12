@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "goal": "Correct text without changing other saved fields",
+  "identity": [{"path":"/record/id","value":"item-1"},{"path":"/record/owner","value":"alice"}],
+  "rules": [
+    {"id":"requested-text","op":"equals","path":"/record/text","value":"Corrected text"},
+    {"id":"no-collateral-change","op":"only_changes","paths":["/record/text"]},
+    {"id":"budget-preserved","op":"unchanged","path":"/record/budget_minor"}
+  ]
+}

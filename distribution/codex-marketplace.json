@@ -1,0 +1,20 @@
+{
+  "name": "outcome-qa-releases",
+  "interface": {
+    "displayName": "Outcome QA Releases"
+  },
+  "plugins": [
+    {
+      "name": "outcome-qa",
+      "source": {
+        "source": "local",
+        "path": "./outcome-qa"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

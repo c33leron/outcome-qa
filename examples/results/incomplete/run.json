@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "run_id": "example-incomplete-1",
+  "target": {
+    "environment": "synthetic offline fixture",
+    "build": null,
+    "actor": "synthetic-member"
+  },
+  "scope": {
+    "goal": "Check a second actor cannot read a booking",
+    "basis": "Synthetic requirement R2: a booking is private to its owner",
+    "exclusions": []
+  },
+  "checks": [
+    {
+      "id": "other-actor-read",
+      "expectation": "The second actor receives no private booking data",
+      "basis": "Synthetic requirement R2",
+      "status": "NOT_RUN",
+      "reason": "A second isolated actor fixture is not available",
+      "evidence_refs": []
+    }
+  ],
+  "artifacts": [],
+  "cleanup": {
+    "status": "not_needed",
+    "notes": "No product request was made"
+  }
+}

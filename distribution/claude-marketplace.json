@@ -1,0 +1,13 @@
+{
+  "name": "outcome-qa-releases",
+  "owner": {
+    "name": "c33leron"
+  },
+  "plugins": [
+    {
+      "name": "outcome-qa",
+      "source": "./outcome-qa"
+    }
+  ],
+  "description": "Outcome QA: focused product testing methods for coding agents."
+}

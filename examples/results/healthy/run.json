@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "run_id": "example-healthy-1",
+  "target": {
+    "environment": "synthetic offline fixture",
+    "build": "fixture-v1",
+    "actor": "synthetic-member"
+  },
+  "scope": {
+    "goal": "One logical submission saves one booking",
+    "basis": "Synthetic requirement R1: repeated delivery must not duplicate a booking",
+    "exclusions": [
+      "No real browser or service was exercised by this example"
+    ]
+  },
+  "checks": [
+    {
+      "id": "booking-count",
+      "expectation": "Exactly one booking is saved",
+      "basis": "Synthetic requirement R1",
+      "status": "PASS",
+      "observation": "Synthetic read-back contains 1 saved record(s)",
+      "evidence_refs": [
+        "readback"
+      ],
+      "reproducibility": "not_applicable"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "readback",
+      "path": "artifacts/readback.json",
+      "sha256": "83ac8ccae7983c5dc7d934d0b13ce810f8d9d509a192444f197e232a08d143e1"
+    }
+  ],
+  "cleanup": {
+    "status": "not_needed",
+    "notes": "These committed files are synthetic format examples; no product state was changed"
+  }
+}

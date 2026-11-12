@@ -1,0 +1,18 @@
+{
+  "name": "outcome-qa",
+  "version": "0.1.0",
+  "description": "A senior QA playbook for coding agents: prioritize risks, test real user journeys, and verify what actually happened.",
+  "author": {
+    "name": "c33leron"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Outcome QA",
+    "shortDescription": "Find bugs. Verify outcomes.",
+    "longDescription": "Test web apps, APIs, integrations and AI features with seven focused QA methods. Start from requirements, adapt to new evidence, verify fixes and hand off reproducible findings.",
+    "developerName": "c33leron",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": "Test this feature against its requirements: exercise the user journey, investigate meaningful risks and verify the resulting state."
+  }
+}

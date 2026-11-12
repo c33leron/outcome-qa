@@ -1,0 +1,86 @@
+{
+  "kind": "synthetic saved AI-output replay, not live model product execution",
+  "requirement": "Preserve explicit negation, latest correction, attribution and stable entity. Accept faithful paraphrase. A truncated raw answer alone does not establish a completed report.",
+  "cases": [
+    {
+      "id": "N1",
+      "input": "Clinician: Have you been diagnosed with diabetes? Person: No. I do have hay fever.",
+      "raw_output": "No diabetes diagnosis reported; seasonal allergic symptoms were reported.",
+      "stop_reason": "stop",
+      "saved": {
+        "id": "visit-11",
+        "summary": "The person denies a diabetes diagnosis and reports hay fever."
+      }
+    },
+    {
+      "id": "N2",
+      "input": "Clinician: Have you been diagnosed with diabetes? Person: No. I do have hay fever.",
+      "raw_output": "The person has diabetes and hay fever.",
+      "stop_reason": "stop",
+      "saved": {
+        "id": "visit-12",
+        "summary": "Diabetes and hay fever."
+      }
+    },
+    {
+      "id": "C1",
+      "input": "Set appointment apt-7 to Tuesday at 14:00. Sorry, Wednesday, keep the time.",
+      "raw_output": "Moved to Wednesday, still 14:00.",
+      "stop_reason": "stop",
+      "saved": {
+        "id": "apt-7",
+        "day": "Tuesday",
+        "time": "14:00"
+      }
+    },
+    {
+      "id": "C2",
+      "input": "Set appointment apt-8 to Tuesday at 14:00. Sorry, Wednesday, keep the time.",
+      "raw_output": "Your appointment is now Wednesday afternoon at two.",
+      "stop_reason": "stop",
+      "saved": {
+        "id": "apt-8",
+        "day": "Wednesday",
+        "time": "14:00"
+      }
+    },
+    {
+      "id": "A1",
+      "input": "Mira: I have migraines. Oleg: I do not have any diagnosed allergies.",
+      "raw_output": "Oleg reports migraines. Mira has no diagnosed allergies.",
+      "stop_reason": "stop",
+      "saved": {
+        "id": "dialogue-4",
+        "summary": "Oleg reports migraines; Mira denies diagnosed allergies."
+      }
+    },
+    {
+      "id": "P1",
+      "input": "Produce the full report for visit-19.",
+      "raw_output": "The person reported",
+      "stop_reason": "length",
+      "saved": null
+    }
+  ],
+  "semantic_expected": {
+    "N1": "PASS",
+    "N2": "FAIL",
+    "C1": "FAIL",
+    "C2": "PASS",
+    "A1": "FAIL",
+    "P1": "INCOMPLETE"
+  },
+  "checker": {
+    "source": "def gate(rows):\n    return all(row.get('pass') for row in rows)\n",
+    "contract": "Exactly one booking-1 result; pass must be a real boolean. Accept only the valid True result.",
+    "controls": [
+      "valid True",
+      "valid False",
+      "empty rows",
+      "string false",
+      "wrong entity",
+      "duplicate rows"
+    ]
+  },
+  "disclosure": "Visible development acceptance fixtures, not an unseen benchmark or a comparative score."
+}

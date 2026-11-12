@@ -1,0 +1,40 @@
+name: Package and helper checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  local-contracts:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ['3.10', '3.14']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        # GitHub's Windows runner supplies Git Bash; keep env expansion identical.
+        shell: bash
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, pinned 2026-11-09
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6, pinned 2026-11-09
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Check canonical reference materialization
+        run: python scripts/sync_shared.py
+      - name: Validate authored package
+        run: python scripts/validate_package.py
+      - name: Test local helpers and synthetic app
+        run: python -m unittest discover -s tests -v
+      - name: Build and read back developer/source archive
+        run: python scripts/package.py --output "${RUNNER_TEMP}/outcome-qa-source.zip"
+      - name: Build and read back clean runtime archive
+        run: python scripts/build_runtime.py --output "${RUNNER_TEMP}/outcome-qa-runtime.zip"
+      - name: Build and read back portable install bundle
+        run: python scripts/build_release.py --output "${RUNNER_TEMP}/outcome-qa-install.zip"

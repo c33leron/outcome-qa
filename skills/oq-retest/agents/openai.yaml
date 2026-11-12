@@ -1,0 +1,6 @@
+interface:
+  display_name: "QA: Fix Verification"
+  short_description: "Verify the original bug and affected neighbors"
+  default_prompt: "Use $oq-retest to verify this claimed fix with equivalent conditions and the original expected result."
+policy:
+  allow_implicit_invocation: true

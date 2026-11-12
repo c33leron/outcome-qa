@@ -1,0 +1,29 @@
+{
+  "format": 1,
+  "files": {
+    "skills/oq-ai-quality/references/_shared/human-data.md": "shared/human-data.md",
+    "skills/oq-ai-quality/references/_shared/skill-start.md": "shared/skill-start.md",
+    "skills/oq-ai-quality/references/_shared/trust-boundary.md": "shared/trust-boundary.md",
+    "skills/oq-ai-quality/references/_shared/voice.md": "shared/voice.md",
+    "skills/oq-automation/references/_shared/skill-start.md": "shared/skill-start.md",
+    "skills/oq-automation/references/_shared/trust-boundary.md": "shared/trust-boundary.md",
+    "skills/oq-automation/references/_shared/voice.md": "shared/voice.md",
+    "skills/oq-checker-audit/references/_shared/skill-start.md": "shared/skill-start.md",
+    "skills/oq-checker-audit/references/_shared/trust-boundary.md": "shared/trust-boundary.md",
+    "skills/oq-checker-audit/references/_shared/voice.md": "shared/voice.md",
+    "skills/oq-explore/references/_shared/human-data.md": "shared/human-data.md",
+    "skills/oq-explore/references/_shared/skill-start.md": "shared/skill-start.md",
+    "skills/oq-explore/references/_shared/trust-boundary.md": "shared/trust-boundary.md",
+    "skills/oq-explore/references/_shared/voice.md": "shared/voice.md",
+    "skills/oq-retest/references/_shared/skill-start.md": "shared/skill-start.md",
+    "skills/oq-retest/references/_shared/trust-boundary.md": "shared/trust-boundary.md",
+    "skills/oq-retest/references/_shared/voice.md": "shared/voice.md",
+    "skills/oq-security-journeys/references/_shared/skill-start.md": "shared/skill-start.md",
+    "skills/oq-security-journeys/references/_shared/trust-boundary.md": "shared/trust-boundary.md",
+    "skills/oq-security-journeys/references/_shared/voice.md": "shared/voice.md",
+    "skills/oq-test-design/references/_shared/human-data.md": "shared/human-data.md",
+    "skills/oq-test-design/references/_shared/skill-start.md": "shared/skill-start.md",
+    "skills/oq-test-design/references/_shared/trust-boundary.md": "shared/trust-boundary.md",
+    "skills/oq-test-design/references/_shared/voice.md": "shared/voice.md"
+  }
+}

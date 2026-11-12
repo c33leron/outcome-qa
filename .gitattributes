@@ -1,0 +1,11 @@
+# Keep checked-in text byte-stable for generated-reference hashes on every OS.
+* text=auto eol=lf
+
+# Binary release assets must never undergo newline conversion.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.zip binary

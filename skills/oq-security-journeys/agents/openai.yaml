@@ -1,0 +1,6 @@
+interface:
+  display_name: "QA: Feature Security"
+  short_description: "Verify feature access, input and browser controls"
+  default_prompt: "Use $oq-security-journeys to verify this feature’s relevant security controls with synthetic fixtures and observable effects."
+policy:
+  allow_implicit_invocation: true

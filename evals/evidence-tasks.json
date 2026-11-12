@@ -1,0 +1,75 @@
+{
+  "tasks": [
+    {
+      "id": "refresh-after-write",
+      "request": "Разбери сохранённые доказательства. Пользователь увидел ошибку после создания и считает, что запись не создана. Что подтверждено и какой следующий шаг? Ничего на сервере не меняй.",
+      "fixture": {
+        "contract": "One logical submission creates at most one reservation; a failed secondary quota refresh must not be reported as a failed creation.",
+        "events": [
+          {
+            "step": "click Create",
+            "response": {
+              "http": 201,
+              "body": {
+                "id": "synthetic-17"
+              }
+            }
+          },
+          {
+            "step": "fetch quota",
+            "response": {
+              "http": 503,
+              "body": {
+                "error": "temporarily unavailable"
+              }
+            }
+          },
+          {
+            "step": "UI",
+            "text": "Creation failed. Try again."
+          },
+          {
+            "step": "independent GET reservations",
+            "http": 200,
+            "body": [
+              {
+                "id": "synthetic-17"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "noncomparable-retest",
+      "request": "Разработчик заявил фикс. Можно ли закрыть исходный баг по приложенному ретесту? Проверь только эти данные.",
+      "fixture": {
+        "original": {
+          "environment": "preprod",
+          "role": "member",
+          "object_exists": true,
+          "action": "cancel without refund",
+          "observed": "refund_requested status",
+          "expected": "cancelled_no_refund"
+        },
+        "retest": {
+          "environment": "preprod",
+          "role": "member",
+          "object_exists": false,
+          "action": "cancel same saved object URL",
+          "http": 404,
+          "observed": "not found"
+        },
+        "build": "new build label, deployed commit unverified"
+      }
+    },
+    {
+      "id": "checker-string-bool",
+      "request": "Посмотри этот проверяющий подтверждения находки. Проверь на локальных синтетических данных, можно ли доверять его вердикту. Файлы продукта не исправляй.",
+      "fixture": {
+        "code": "def confirmed(result):\n    return bool(result.get(\"confirmed\", False))\n",
+        "contract": "Only a JSON boolean true may confirm a finding; false does not. Strings and unknown/missing data must remain invalid or unconfirmed, not confirmed."
+      }
+    }
+  ]
+}

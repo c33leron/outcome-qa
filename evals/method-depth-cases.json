@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "kind": "supplied-evidence-and-design-development-cases",
+  "instructions": "Use the applicable candidate methods; do not execute product actions or read grading expectations. These cases are not a live-product benchmark.",
+  "cases": [
+    {
+      "id": "D01",
+      "request": "Design-only: active account, basket >=10000 minor units and no prior redemption are all required for 10% discount. Below threshold, inactive or redeemed means zero. A replay must not apply a second discount. No runtime is available. Give at most eight prioritized checks with inputs, expected result and observable oracle; state what was not run."
+    },
+    {
+      "id": "D02",
+      "request": "Autocomplete contract: the last input determines current options. Supplied trace: input Al(request1), then Ali(request2); response2 renders Ali, then response1 arrives and visible options revert to Al. No more evidence. Assess and select the next distinguishing probe; do not run the product."
+    },
+    {
+      "id": "D03",
+      "request": "Search permits ordinary punctuation in names. A tester supplied O'Reilly and got HTTP500 once, then declared SQL injection. No SQL trace or returned row effects are available. Assess the claim and propose the smallest useful control; do not execute."
+    },
+    {
+      "id": "D04",
+      "request": "Comment contract: plain text must be displayed literally. Supplied raw API JSON contains <script>marker</script>; browser DOM has a text node showing exactly that string, no execution observed. Tester reports XSS. Assess supplied evidence only."
+    },
+    {
+      "id": "D05",
+      "request": "Same plain-text comment contract. An owned synthetic comment entered through the normal form contains a harmless unique marker. On reopening, the real browser executes that marker from saved comment rendering; no DevTools script, harness rewriting or external network action occurred. Assess supplied evidence only."
+    },
+    {
+      "id": "D06",
+      "request": "Cookie-authenticated setting changes must reject untrusted origins. Healthy same-origin control works. A real browser at a controlled untrusted origin sends the authenticated change, cannot read its response due to CORS, but independent owner read-back confirms the synthetic setting changed. No concurrent writers. Tester says CORS protected the action. Assess supplied evidence only."
+    },
+    {
+      "id": "D07",
+      "request": "A URL-preview feature is supposed to fetch allowed external HTTPS URLs server-side. A permitted URL produces an attributed server callback. Another attempted destination has no server callback; a callback seen there came from the tester opening that address in their browser. Tester declares SSRF twice. Assess evidence only, name what is missing."
+    },
+    {
+      "id": "D08",
+      "request": "Plan execution of a feature task covering UI upload, API processing, AI summary quality and access rights. Available workers share one signed-in browser and one mutable test record; separate fixtures may be created but are not yet prepared. Should four skills mean four simultaneous workers? Explain the concrete division/join/cleanup and preserve all requested clauses. Do not execute."
+    }
+  ]
+}

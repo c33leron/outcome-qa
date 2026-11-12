@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "kind": "development_semantic_routing",
+  "cases": [
+    {
+      "id": "R01",
+      "prompt": "Протестируй новую форму бронирования на DEV по этим требованиям.",
+      "expected_primary": "oq-explore"
+    },
+    {
+      "id": "R02",
+      "prompt": "Explore checkout recovery after a connection loss without changing product code.",
+      "expected_primary": "oq-explore"
+    },
+    {
+      "id": "R03",
+      "prompt": "Какие человеческие сценарии стоит проверить у редактирования профиля?",
+      "expected_primary": "oq-test-design"
+    },
+    {
+      "id": "R04",
+      "prompt": "Check whether the actual dialog can be used with keyboard and at a narrow viewport.",
+      "expected_primary": "oq-explore"
+    },
+    {
+      "id": "R05",
+      "prompt": "Напиши Playwright тесты повторной отправки заказа на наших fixtures.",
+      "expected_primary": "oq-automation"
+    },
+    {
+      "id": "R06",
+      "prompt": "Diagnose the failing API tests; do not fix the application.",
+      "expected_primary": "oq-automation"
+    },
+    {
+      "id": "R07",
+      "prompt": "После рефакторинга отвалились локаторы автотестов, разбери и исправь тесты.",
+      "expected_primary": "oq-automation"
+    },
+    {
+      "id": "R08",
+      "prompt": "Проверь, сохранил ли AI-отчёт отрицания и кому принадлежат факты.",
+      "expected_primary": "oq-ai-quality"
+    },
+    {
+      "id": "R09",
+      "prompt": "Design evaluations for multi-turn corrections in our assistant.",
+      "expected_primary": "oq-ai-quality"
+    },
+    {
+      "id": "R10",
+      "prompt": "AI пишет что обновил заявку; проверь соответствие его ответа реальному состоянию.",
+      "expected_primary": "oq-ai-quality"
+    },
+    {
+      "id": "R11",
+      "prompt": "Audit whether this LLM judge catches fabricated quotes and accepts valid paraphrases.",
+      "expected_primary": "oq-checker-audit"
+    },
+    {
+      "id": "R12",
+      "prompt": "Бенч зелёный даже на испорченных ответах, проверь сам проверяющий.",
+      "expected_primary": "oq-checker-audit"
+    },
+    {
+      "id": "R13",
+      "prompt": "Verify this percentile calculation and whether failures poison the baseline.",
+      "expected_primary": "oq-checker-audit"
+    },
+    {
+      "id": "R14",
+      "prompt": "Разработчик пофиксил дубли заказов; сделай ретест исходного бага.",
+      "expected_primary": "oq-retest"
+    },
+    {
+      "id": "R15",
+      "prompt": "Verify the reported fix against the original reproduction and current requirements.",
+      "expected_primary": "oq-retest"
+    },
+    {
+      "id": "R16",
+      "prompt": "После исправления изменили ТЗ, проверь закрытие этого дефекта по новым правилам.",
+      "expected_primary": "oq-retest"
+    },
+    {
+      "id": "R17",
+      "prompt": "Проверь, может ли один из двух моих тестовых пользователей прочитать чужую запись.",
+      "expected_primary": "oq-security-journeys"
+    },
+    {
+      "id": "R18",
+      "prompt": "Test whether instructions in an uploaded synthetic document cause an unauthorized tool write.",
+      "expected_primary": "oq-security-journeys"
+    },
+    {
+      "id": "R19",
+      "prompt": "Проверь безопасность сессии: после logout старая вкладка не должна выполнять операции.",
+      "expected_primary": "oq-security-journeys"
+    },
+    {
+      "id": "R20",
+      "prompt": "Проверь орфографию моего письма.",
+      "expected_primary": null
+    },
+    {
+      "id": "R21",
+      "prompt": "Сделай красивую посадочную страницу, тестирование сейчас не нужно.",
+      "expected_primary": null
+    },
+    {
+      "id": "R22",
+      "prompt": "Посчитай 15 процентов от 900.",
+      "expected_primary": null
+    },
+    {
+      "id": "R23",
+      "prompt": "Переведи готовый баг-репорт на английский, ничего не тестируй.",
+      "expected_primary": null
+    },
+    {
+      "id": "R24",
+      "prompt": "Объясни, что такое большая языковая модель.",
+      "expected_primary": null
+    },
+    {
+      "id": "R25",
+      "prompt": "Проверь, не перекрывает ли крестик кнопку отправки в AI-чате.",
+      "expected_primary": "oq-explore"
+    },
+    {
+      "id": "R26",
+      "prompt": "Напиши API-автотест прав доступа на наших тестовых аккаунтах.",
+      "expected_primary": "oq-automation"
+    },
+    {
+      "id": "R27",
+      "prompt": "Повтори исходный PoC после заявленного фикса доступа и проверь соседний endpoint.",
+      "expected_primary": "oq-retest"
+    },
+    {
+      "id": "R28",
+      "prompt": "Судья всегда ставит пять, даже когда ответ не по теме.",
+      "expected_primary": "oq-checker-audit"
+    },
+    {
+      "id": "R29",
+      "prompt": "По ТЗ скидок составь тест-кейсы и таблицу условий. Продукт ещё недоступен, ничего не запускай.",
+      "expected_primary": "oq-test-design"
+    },
+    {
+      "id": "R30",
+      "prompt": "Prepare a risk-prioritized test plan for account recovery, including states and expected outcomes.",
+      "expected_primary": "oq-test-design"
+    },
+    {
+      "id": "R31",
+      "prompt": "Спроектируй граничные проверки PATCH: отсутствующее поле не меняет значение, null очищает.",
+      "expected_primary": "oq-test-design"
+    },
+    {
+      "id": "R32",
+      "prompt": "Generate a Playwright suite from these already approved cases.",
+      "expected_primary": "oq-automation"
+    },
+    {
+      "id": "R33",
+      "prompt": "Проверь в браузере autocomplete: после быстрого ввода иногда возвращается старый результат.",
+      "expected_primary": "oq-explore"
+    },
+    {
+      "id": "R34",
+      "prompt": "Test the running PATCH endpoint for omitted fields, null and empty strings against its contract.",
+      "expected_primary": "oq-explore"
+    },
+    {
+      "id": "R35",
+      "prompt": "Проверь XSS и контекст экранирования в комментариях этой тестовой фичи.",
+      "expected_primary": "oq-security-journeys"
+    },
+    {
+      "id": "R36",
+      "prompt": "Check whether the search input can alter SQL/NoSQL query semantics on our isolated fixture.",
+      "expected_primary": "oq-security-journeys"
+    },
+    {
+      "id": "R37",
+      "prompt": "Проверь CORS: может ли запрещённый origin прочитать защищённый тестовый ответ в браузере?",
+      "expected_primary": "oq-security-journeys"
+    },
+    {
+      "id": "R38",
+      "prompt": "Check CSRF protection: a cross-origin write must not commit even if the response is unreadable.",
+      "expected_primary": "oq-security-journeys"
+    },
+    {
+      "id": "R39",
+      "prompt": "Для AI-суммаризатора придумай семантические eval-кейсы с отрицаниями и исправлениями.",
+      "expected_primary": "oq-ai-quality"
+    },
+    {
+      "id": "R40",
+      "prompt": "Проверь надёжность judge для XSS-отчётов: он принимает отражение строки за исполнение.",
+      "expected_primary": "oq-checker-audit"
+    },
+    {
+      "id": "R41",
+      "prompt": "После фикса XSS повтори исходное воспроизведение и нормальный сценарий комментария.",
+      "expected_primary": "oq-retest"
+    },
+    {
+      "id": "R42",
+      "prompt": "Создай красивую форму входа на React, тестирование пока не нужно.",
+      "expected_primary": null
+    },
+    {
+      "id": "R43",
+      "prompt": "Translate this frontend test report to English without running or reviewing tests.",
+      "expected_primary": null
+    },
+    {
+      "id": "R44",
+      "prompt": "По требованиям регистрации составь минимальный набор ручных сценариев, без автотестов.",
+      "expected_primary": "oq-test-design"
+    }
+  ]
+}

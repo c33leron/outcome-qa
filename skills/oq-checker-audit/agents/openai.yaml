@@ -1,0 +1,6 @@
+interface:
+  display_name: "QA: Check the Checker"
+  short_description: "Audit judges, assertions and false-pass gates"
+  default_prompt: "Use $oq-checker-audit to test whether this evaluator detects the important incorrect outcomes."
+policy:
+  allow_implicit_invocation: true

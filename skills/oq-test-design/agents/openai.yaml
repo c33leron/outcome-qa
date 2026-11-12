@@ -1,0 +1,6 @@
+interface:
+  display_name: "QA: Test Design"
+  short_description: "Design prioritized cases with observable outcomes"
+  default_prompt: "Use $oq-test-design to turn these requirements into prioritized test cases with clear expected results and coverage gaps."
+policy:
+  allow_implicit_invocation: true

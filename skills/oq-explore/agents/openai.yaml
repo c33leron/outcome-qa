@@ -1,0 +1,6 @@
+interface:
+  display_name: "QA: Lead Explorer"
+  short_description: "Lead QA journeys and coordinate focused checks"
+  default_prompt: "Use $oq-explore to lead this QA task through realistic user actions and saved outcomes, bringing in relevant installed methods or independent workers when the evidence warrants them."
+policy:
+  allow_implicit_invocation: true

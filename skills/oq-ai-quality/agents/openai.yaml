@@ -1,0 +1,6 @@
+interface:
+  display_name: "QA: AI Product Quality"
+  short_description: "Check meaning, attribution and AI side effects"
+  default_prompt: "Use $oq-ai-quality to evaluate this AI feature against its intended meaning and saved results."
+policy:
+  allow_implicit_invocation: true
