@@ -73,7 +73,7 @@ class RuntimeDistributionTests(unittest.TestCase):
         shutil.rmtree(self.source)
         for skill in sorted(builder.SKILLS):
             result = subprocess.run([sys.executable, '-B', str(out / 'scripts/export_playbook.py'), skill],
-                                    capture_output=True, text=True, cwd=out)
+                                    capture_output=True, encoding='utf-8', cwd=out)
             self.assertEqual(0, result.returncode, result.stderr)
             self.assertIn('gstack', result.stdout)
             self.assertIn('MIT', result.stdout)
