@@ -32,6 +32,10 @@ Offline reasoning tasks also cover partial AI completion, changed requirements, 
 
 The second development lab, `scripts/boundary_lab.py`, is specified in [boundary-task](../evals/boundary-task.md). Its denied-write/owner-readback contrast tests whether the tester follows the side effect rather than trusting the HTTP status. For a blind trial provide the task and running URL, not the lab source or expected variant. [State contracts](STATE-CONTRACTS.md) add executable checks for protected fields and object identity; fixture tests do not prove an agent will collect correct snapshots.
 
+## Frozen behavioral records
+
+[Behavioral evaluation workflow](BEHAVIORAL-EVALS.md) provides a dependency-free CLI for preparing label-free packets from generalized development cases and validating independently supplied reviews against frozen inputs, planned attempts and hashed native artifacts. It keeps outcome, adherence and observed method loading separate, including failed/unknown attempts. It does not call a model or replace semantic review. Use it alongside native execution, not as a substitute for it.
+
 ## Adaptive lead controls
 
 [lead-routing-cases.json](../evals/lead-routing-cases.json) records open development expectations for mid-task method selection, installed external skills, actual worker capability, shared-state isolation, context-only review and stopping. Keep its `expected` fields away from the tested agent. These cases are not an executed-coverage claim.

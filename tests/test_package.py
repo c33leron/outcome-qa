@@ -39,8 +39,35 @@ class PackageTests(unittest.TestCase):
         # macOS tempfile can use /var -> /private/var. These are ordinary
         # archive controls, not the separate symlink-boundary tests.
         dest = Path(root).resolve() / 'outcome-qa'
-        shutil.copytree(ROOT, dest, ignore=shutil.ignore_patterns('__pycache__', '.git'))
+        # Start each package test from declared current source bytes. Copying
+        # the author's entire checkout lets unrelated, unlisted files mask the
+        # specific fault a test introduces. The production packager remains
+        # strict; negative controls add their own unlisted data below.
+        inventory = json.loads((ROOT / 'package-files.json').read_text(encoding='utf-8'))
+        for relative in inventory['files']:
+            target = dest / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(ROOT / relative, target)
         return dest
+
+    def test_fixture_copy_uses_current_inventory_bytes_not_unlisted_workspace_files(self):
+        """Unrelated author assets must not prevent a negative test reaching its oracle."""
+        with tempfile.TemporaryDirectory() as temporary:
+            source = Path(temporary).resolve() / 'source'
+            source.mkdir()
+            names = ['package-files.json', 'nested/current.txt']
+            (source / 'package-files.json').write_text(
+                json.dumps({'format': 1, 'files': names}), encoding='utf-8')
+            (source / 'nested').mkdir()
+            (source / 'nested/current.txt').write_text('uncommitted current bytes', encoding='utf-8')
+            (source / 'unlisted-author-asset.txt').write_text('preserve outside fixture', encoding='utf-8')
+            with patch.dict(globals(), ROOT=source):
+                copied = self.copy(Path(temporary) / 'destination')
+            self.assertEqual('uncommitted current bytes',
+                             (copied / 'nested/current.txt').read_text(encoding='utf-8'))
+            self.assertFalse((copied / 'unlisted-author-asset.txt').exists())
+            self.assertEqual('preserve outside fixture',
+                             (source / 'unlisted-author-asset.txt').read_text(encoding='utf-8'))
 
     def test_archive_roundtrip(self):
         with tempfile.TemporaryDirectory() as t:

@@ -1,27 +1,12 @@
 # Lead the investigation, not a mandatory swarm
 
-When Explore is selected, the current agent owns the user's whole QA question. It can apply another installed method itself, delegate a bounded branch, or request an independent review. A skill supplies instructions; only the host's actual tools can start workers. Explicit design, automation, AI-quality or retest requests can enter those methods directly—Explore is not a compulsory supervisor.
+When Explore is selected, the current agent owns the user's whole QA question. It can apply another installed method, delegate a bounded branch or request independent review. Only the host's actual tools can start workers. Other methods can lead directly—Explore is not a compulsory supervisor.
 
 ## Reassess after an observation
 
-Keep the requested outcomes and important gaps visible in conversation or an authorized session record. After a meaningful observation or worker result:
+Use the shared [decision loop](_shared/decision-loop.md): preserve the requested outcome, bind observations to the applicable rule/conditions, then choose the smallest deciding check. It applies to every method and to short tasks; do not wait for the user to name a specialist. Keep important gaps visible in conversation or an authorized record.
 
-1. Name the unresolved question and why it can change the current verdict.
-2. Choose the smallest useful response: a local check/reference, another method, a diagnostic tool, or an independent worker.
-3. Load the needed instructions, perform the permitted check, and bring its evidence back to the original question.
-4. Close the branch with an observation or concrete gap; repeat only when new evidence warrants it.
-
-This applies to a short "test this task" too. Do not wait for the user to name a specialist. A frontend/backend label alone needs neither a second method nor a second agent.
-
-| Newly relevant question | Appropriate next method or depth |
-| --- | --- |
-| Browser/API/state boundary in the same journey | Explore's applicable surface reference; keep the end-to-end identity intact |
-| Meaning, correction, attribution, AI completion or saved AI result | `oq-ai-quality`; distinguish model, parser, storage and presentation |
-| Access, origin, input/rendering or tool-action trust boundary | `oq-security-journeys`; prove the scoped effect, not just a status or refusal |
-| Test, fixture, runner or CI behavior obstructs a required check | `oq-automation`; a product failure alone is not a broken test, and diagnosis is not permission to repair code |
-| An assertion, judge, metric or gate may accept a wrong result | `oq-checker-audit`; test its actual decision with healthy and faulty controls |
-| A specific claimed fix needs original-condition confirmation | `oq-retest`; retain adjacent coverage without recursively handing the whole task back and forth |
-| Planned coverage is a distinct requested deliverable | `oq-test-design`; do not turn every small check into a separate planning phase |
+A browser/API/state question may need only Explore's relevant surface reference. A frontend/backend label alone needs neither another method nor another agent. For a disputed async/media transition, use [incident tracing](_shared/incident-tracing.md). Return each branch's evidence to the original question instead of recursively handing the whole task between methods.
 
 ## Use the installed ecosystem, not a fixed roster
 

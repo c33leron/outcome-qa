@@ -15,11 +15,11 @@ Join observations by operation, entity and attempt—not by similar text alone. 
 
 Read the actual observation channel: a page displaying “503” does not establish HTTP 503, and a transient failed inner poll does not establish the final test failed. An HTML/source anomaly without an applicable requirement or observable effect is not automatically a product defect.
 
-For async work, set a bounded observation window justified by the requirement or measured baseline. Distinguish “not complete within this window” from a proven permanent hang. A successful queue insertion is not a completed job. Cancellation acceptance is not proof that the worker stopped or effects were rolled back.
+For async work, bound observation by the requirement or measured baseline. Queue acceptance is not completion; cancellation acceptance is not stopped work or rollback. For disputed attempts, capacity, runner/product counts or media transitions, use [incident tracing](_shared/incident-tracing.md) to reconstruct conditions at the event time and locate the next deciding check.
 
 For a file/AI pipeline, a useful boundary sequence is: submitted file → extracted input → model output and stop metadata if available → parser/mapper → saved result → UI. A missing raw response can limit attribution without invalidating a directly observed bad saved result. Do not infer truncation solely from a parsing error.
 
-For voice/media work, separate joining the call, receiving an actual playable track, recording, transcript production and report persistence. A connected peer or RTP traffic alone does not prove audible content; successful playback does not prove recording. Exercise only the capabilities relevant to the task and state what remains unobserved.
+For voice/media work, distinguish connected, track received, heard, recorded, transcribed and reported. Exercise only the boundaries relevant to the promise; a connected peer alone cannot prove a conversation.
 
 ## Minimal useful evidence packet
 

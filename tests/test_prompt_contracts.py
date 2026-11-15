@@ -47,6 +47,22 @@ class PromptContracts(unittest.TestCase):
         self.assertFalse((ROOT/'hooks/hooks.json').exists())
         self.assertNotIn('hooks',json.loads((ROOT/'.claude-plugin/plugin.json').read_text(encoding='utf-8')))
 
+    def test_adaptive_and_incident_depth_ship_with_each_standalone_method(self):
+        """Reference closure, not evidence that a model follows the guidance."""
+        shared = json.loads((ROOT / 'shared-references.json').read_text(encoding='utf-8'))['files']
+        runtime = json.loads((ROOT / 'runtime-files.json').read_text(encoding='utf-8'))['files']
+        for skill in sorted(SKILLS):
+            for name in ('decision-loop.md', 'incident-tracing.md'):
+                with self.subTest(skill=skill, reference=name):
+                    relative = f'skills/{skill}/references/_shared/{name}'
+                    self.assertEqual(f'shared/{name}', shared.get(relative))
+                    self.assertEqual(relative, runtime.get(relative))
+                    self.assertTrue((ROOT / relative).is_file())
+        startup = (ROOT / 'shared/skill-start.md').read_text(encoding='utf-8')
+        self.assertIn('(decision-loop.md)', startup)
+        decision = (ROOT / 'shared/decision-loop.md').read_text(encoding='utf-8')
+        self.assertIn('(incident-tracing.md)', decision)
+
     def test_runtime_omits_canon_sync_tests_and_labs(self):
         mapping=json.loads((ROOT/'runtime-files.json').read_text(encoding='utf-8'))['files']
         for path in mapping:

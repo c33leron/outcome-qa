@@ -5,14 +5,16 @@ The GitHub repository is the primary distribution: the root exposes seven portab
 ## Release identity
 
 - Package: `outcome-qa`
-- Version: `0.1.0`
+- Version: `0.1.1`
 - Local release marketplace: `outcome-qa-releases`
-- Install asset: `outcome-qa-0.1.0.zip`
-- Source asset: `outcome-qa-source-0.1.0.zip`
+- Install asset: `outcome-qa-0.1.1.zip`
+- Source asset: `outcome-qa-source-0.1.1.zip`
 
 A prepared directory or archive is not a publication receipt. Creating a remote repository, pushing, tagging and uploading release assets are deliberate publication steps. After the first authorized push, run the README command against the actual repository from a clean project before announcing the release.
 
 ## 1. Freeze the source
+
+Check the latest published GitHub release and tags before choosing the version. Public versioning follows that release history, not a higher label used by a private/local plugin cache. Keep historical verification receipts under their actual tested identity; explicitly state when identical method content is carried into a differently numbered public release.
 
 Confirm the intended repository, branch, working-tree changes, version and attribution. Record the source commit when one exists. Review source inventory changes; exclude private research, raw chat histories, credentials, generated caches and machine-specific paths. Keep tests, CI, synthetic examples and their provenance.
 
@@ -35,8 +37,8 @@ Run the release-specific checks recorded in [Verification](VERIFICATION.md), inc
 Build the normal full-plugin installation source with `python3 scripts/build_release.py --output-dir ../outcome-qa-marketplace`. For optional offline ZIPs, use new paths **outside the source tree**; builders refuse to overwrite.
 
 ```sh
-python3 scripts/build_release.py --output /path/to/release/outcome-qa-0.1.0.zip
-python3 scripts/package.py --output /path/to/release/outcome-qa-source-0.1.0.zip
+python3 scripts/build_release.py --output /path/to/release/outcome-qa-0.1.1.zip
+python3 scripts/package.py --output /path/to/release/outcome-qa-source-0.1.1.zip
 ```
 
 `build_release.py --output-dir /path/to/new-bundle-directory` produces an unpacked bundle for inspection. `build_runtime.py` builds only the inner runtime; that is not the complete public marketplace bundle.
@@ -44,7 +46,7 @@ python3 scripts/package.py --output /path/to/release/outcome-qa-source-0.1.0.zip
 Expected install archive layout:
 
 ```text
-outcome-qa-0.1.0/
+outcome-qa-0.1.1/
 ├── README.md
 ├── MANIFEST.json
 ├── .agents/plugins/marketplace.json

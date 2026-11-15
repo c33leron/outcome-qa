@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.1 — 2026-11-15
+
+- Shared adaptive decisions are available from all seven methods, without requiring an extra loop for a straightforward verified result.
+- Stronger event-time configuration/identity checks, preservation of the requested actor and scope, and recovery from stale or truncated method reads.
+- Optional async/media investigation separates runner counts, attempts, connection, heard content and durable results while retaining proactive human journeys.
+- Development-only behavioral packet preparation and adjudication binding keep outcome, adherence and observed loading separate; they do not automatically judge semantic truth.
+- Package-test fixtures use declared current source bytes, preserving unlisted author assets without weakening the release allowlist.
+
 ## 0.1.0
 
 First public version of Outcome QA.

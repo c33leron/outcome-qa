@@ -1,4 +1,21 @@
-# Outcome QA 0.1.0 verification
+# Verification record
+
+## Method verification before 0.1.1 — 2026-11-15
+
+The following method checks used the private/local build label **0.1.3**. That label was never published on GitHub; the public successor to 0.1.0 is **0.1.1**. The same seven method bodies and references are carried into 0.1.1 without changes. These are local checks, not a claim of superiority. Tested on macOS with Python 3.14.6 and Codex CLI 0.164.0.
+
+- Full unittest suite: 303 total, 300 passed, three Windows NTFS junction checks skipped on macOS. Shared-reference sync, package validation and all seven bundled authoring validations passed. The external authoring validator used a disposable environment for PyYAML; the runtime remains dependency-free.
+- Native local installation returned 0.1.3; fresh `skills/list` returned all seven enabled methods in two working directories without package errors. All 109 runtime files in the source and installed cache matched the reviewed source mapping; all seven installed playbook exports executed successfully. Existing host configuration bytes and the prior plugin source backup were preserved.
+- Explicit-path prior/candidate comparison: five fresh runs per arm on one frozen synthetic historical-capacity scenario. Both arms reached the supported bounded conclusion. Candidate runs read the new shared decision/incident references. No quality uplift was observed on that case; global host instructions remained present, so the prior was not a skill-disabled baseline.
+- Additional candidate probes requested `gpt-6.1-sol` with high reasoning: role/coverage, truncated method loading, healthy correction and bounded continuation; a translation-only neighbor returned only the translation without loading QA. An extra initially pinned role probe was retained separately. The first comparison used configured `gpt-6-astra` with ultra reasoning. These are requested/configured identities; CLI output did not independently return the serving model ID.
+- A fresh post-install task with no skill name/path selected the installed 0.1.3 Explore method and correctly identified an unrelated field change in a supplied synthetic trace. This establishes one natural-discovery case, not universal invocation reliability.
+- Three supplied-evidence forward controls preserved healthy PASS, role-specific coverage and confident reporting of an attributed wrong-question answer. A separately frozen role case was executed by another agent and its actual answer/tool records passed the new adjudication-binding workflow. Reviews remain trusted semantic inputs, not automatic truth.
+- Independent review found and verified corrections for packet filename collisions, repeated-path artifact reads and partial prepare cleanup in the development evaluator, plus an over-broad shared-loop trigger. These fixes do not add a runtime hook or mandatory review for ordinary QA.
+
+Private raw trial records stay outside the distributed source. No live product regression, fresh Windows run, Claude runtime check, disabled-skill A/B, unseen benchmark or publication was performed for this candidate. Older live chats may retain prior instructions; use a fresh session after updating.
+
+
+## Historical 0.1.0 verification
 
 | Check | Observed result |
 |---|---|

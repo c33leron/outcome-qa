@@ -19,7 +19,8 @@ from strict_json import load, terminal
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = {'oq-explore', 'oq-test-design', 'oq-automation', 'oq-ai-quality',
           'oq-checker-audit', 'oq-retest', 'oq-security-journeys'}
-NAMES = {'voice.md', 'trust-boundary.md', 'human-data.md', 'skill-start.md'}
+NAMES = {'voice.md', 'trust-boundary.md', 'human-data.md', 'skill-start.md',
+         'decision-loop.md', 'incident-tracing.md'}
 HEADER = re.compile(rb'<!-- outcome-qa:generated source=(shared/[a-z-]+\.md) sha256=([a-f0-9]{64}) -->\n')
 WRITE_LIMIT = ('Coordinate other writers; conflicts observed through commit verification are preserved. '
                'Writes via stale open handles after that point are outside this guarantee.')

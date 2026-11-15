@@ -1,6 +1,6 @@
 # AI behaviors across the product boundary
 
-Select a behavior because the feature promises it. Begin with a healthy control and a synthetic source/session whose expected result is independently known. These checks are not a mandatory model benchmark or a substitute for the application's own contract.
+Select behavior from the feature's promise, with a healthy control and synthetic source/session whose expected result is independently known. This is not a mandatory benchmark. Use the shared [decision loop](_shared/decision-loop.md) when a new observation needs another check or method; preserve the original semantic question.
 
 ## Streaming and cancellation
 
@@ -15,7 +15,7 @@ Follow one generation/operation ID through request acceptance, visible partial o
 | Tool work around cancellation | Cancel near an approved synthetic tool action | Establish whether the action was pending, already committed or prevented; inspect post-state before retrying or claiming rollback |
 | Broken transport | Interrupt the stream while the worker may continue | Separately observe client presentation, worker terminal state and persisted result; a disconnected UI does not establish backend cancellation |
 
-Preserve raw output and actual returned stop/error metadata. When metadata is unavailable, name the missing boundary rather than inventing a finish reason. Controlled delay/transport fixtures establish behavior under the modeled failure, not its natural production frequency. A final refusal cannot undo an earlier observed write.
+Preserve raw output and returned stop/error metadata; if absent, leave the finish reason unknown. Controlled fixtures establish modeled behavior, not production frequency. A final refusal cannot undo an earlier write. For async/media localization use [incident tracing](_shared/incident-tracing.md): runner completions, connected calls, transcripts and persisted reports are different outcomes.
 
 ## RAG and source grounding
 

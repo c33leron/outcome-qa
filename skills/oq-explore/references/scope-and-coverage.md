@@ -1,13 +1,13 @@
 # Keep the whole requested scope visible
 
-Use this for a batch of tasks, a large feature or multiple requirement sources. A narrow check can keep the same reasoning in conversation.
+Use this for a batch, large feature or multiple requirement sources. A narrow check keeps the same reasoning in conversation; no mandatory ledger is needed.
 
 ## Establish what “all” refers to
 
 - Identify the selected tasks and material acceptance criteria by stable IDs or unambiguous labels. Read the next page/cursor when the source is paginated; check whether a tool truncated the document or only returned a search excerpt.
 - Distinguish the complete selected set from the subset currently available. If twelve tasks are requested but only five have been retrieved, five completed checks cannot establish acceptance of twelve. Continue useful work without disguising the retrieval gap.
 - Resolve duplicate, superseded and changed requirements before counting them. Owner acceptance with disclosed gaps, board status and a completed QA check are different facts.
-- Keep requirements from different roles, environments or versions separate when the difference affects behavior. Do not merge similar titles into one entity.
+- Keep relevant roles, environments and versions separate. Bind actor/tenant to the actual session, not the intended login or account label. An Admin control may diagnose a blocked HR journey but does not satisfy HR coverage. Retain that obligation and continue independent checks.
 
 ## Connect rules to observations
 
@@ -19,7 +19,7 @@ For stateful work, keep a short outcome contract:
 
 Example: replacing one item may change its ID, description and total price, but must preserve the selected neighboring items and the user's budget rule. A success toast is not evidence for all these properties.
 
-Do not manufacture a percentage when the denominator is unknown. If scope changes, preserve the original selection and identify the newly included/excluded requirements; do not silently shrink the denominator until the report is green.
+Do not manufacture percentages with an unknown denominator. Before a scope/actor/channel change, use the [decision loop](_shared/decision-loop.md): preserve the original selection and distinguish diagnostic controls from its coverage. Record agreed additions/removals; an attractive unrelated check does not replace unfinished requested work. Blocked, interrupted or unreached checks remain gaps, not PASS.
 
 ## Optional full-plugin result helper
 
