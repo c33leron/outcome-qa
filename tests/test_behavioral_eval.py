@@ -337,8 +337,26 @@ class BehavioralEvalTests(unittest.TestCase):
         self.assertEqual(len(behavioral_eval.manifest_data(self.manifest_path)['planned_trials']), 4)
 
     def test_artifact_healthy_single_read_returns_hash_checked_bytes(self):
-        desc = self.artifact('answer-original.txt', 'Original healthy record.\n')
-        self.assertEqual(behavioral_eval.artifact(self.base, desc, True), b'Original healthy record.\n')
+        records = {
+            'lf': b'Original healthy record.\n',
+            'crlf': b'Original healthy record.\r\n',
+        }
+        for line_ending, expected in records.items():
+            with self.subTest(line_ending=line_ending):
+                path = self.base / f'answer-original-{line_ending}.txt'
+                path.write_bytes(expected)
+                desc = {
+                    'id': 'transcript',
+                    'path': path.name,
+                    'sha256': hashlib.sha256(expected).hexdigest(),
+                }
+
+                self.assertEqual(behavioral_eval.artifact(self.base, desc, True), expected)
+
+                opposite = records['crlf' if line_ending == 'lf' else 'lf']
+                wrong_desc = dict(desc, sha256=hashlib.sha256(opposite).hexdigest())
+                with self.assertRaises(ValueError):
+                    behavioral_eval.artifact(self.base, wrong_desc, True)
 
     @unittest.skipUnless(hasattr(os, 'O_NOFOLLOW'), 'Requires POSIX no-follow support')
     def test_artifact_does_not_reopen_path_after_safe_handle_was_opened(self):
