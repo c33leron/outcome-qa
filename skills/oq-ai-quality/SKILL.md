@@ -6,7 +6,7 @@ license: "MIT; see LICENSE.txt for copyright and upstream notices."
 
 # Test the AI result a person actually receives
 
-After loading, name this method and purpose once before QA actions; follow [startup](references/_shared/skill-start.md) for paths and delegation.
+After loading, name this method and purpose once before QA actions; follow [startup](references/_shared/skill-start.md) to verify discovery and review requirements.
 
 Check the product promise, from the person's input to the saved result. Use the existing runner and choose the smallest observation boundary that preserves the risk. Label an isolated model call, replay and full product journey accurately.
 

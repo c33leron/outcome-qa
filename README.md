@@ -28,7 +28,7 @@ You don't need to write a QA prompt from scratch. [Other ways to install](docs/I
 
 ## How it works
 
-**Work out what matters first.** Start with the acceptance criteria, the user's goal, and the current state. If the ticket is unclear about something that would change the verdict, surface it. Spend time on risks that can lose work, duplicate an action, corrupt data, or break a critical path—not on generating the longest checklist.
+**Work out what matters first.** Start with the acceptance criteria, the user's goal, and the current state. Read the linked criteria and designs that affect the outcome. If they conflict or leave a decision open, ask a specific question and continue checks with a clear expected result. Spend time on risks that can lose work, duplicate an action, corrupt data, or break a critical path—not on generating the longest checklist.
 
 **Use the product like a person.** A customer edits a value after seeing the preview. Clicks twice when nothing happens. Loses the connection and returns. The agent starts with a normal journey and chooses which interruption, retry, or permission change makes sense for this feature.
 

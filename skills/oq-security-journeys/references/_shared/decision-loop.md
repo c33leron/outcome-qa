@@ -1,4 +1,4 @@
-<!-- outcome-qa:generated source=shared/decision-loop.md sha256=d063285c21adf2b9247553eb6b6ee518fc010a5e7b8d99dd2665d3dc564f5fd0 -->
+<!-- outcome-qa:generated source=shared/decision-loop.md sha256=1c514efd860fde2a4f96e1a3f83aa919f0b89e022c4f142c3621e3e19aa285fb -->
 # Keep the goal; advance the evidence
 
 Use this loop when an observation or worker result opens a consequential question, disputes a conclusion, or requires an actor, channel or scope change. A direct check with sufficient evidence can finish without it. It works inside every method; no compulsory supervisor, extra agent, table or new document is needed.
@@ -8,6 +8,10 @@ Use this loop when an observation or worker result opens a consequential questio
 3. **Act, then return.** Perform that bounded check, retain its identity/attempt, and bring the result back to the original outcome. Choose a reference, tool, method or worker because it answers the question—not to fill a roster. Stop the branch at its answer, a concrete gap or the agreed limit; repeat only when new evidence warrants it.
 
 Use the current catalogue and [startup](skill-start.md) for any newly needed method: product behavior → `oq-explore`; meaning/corrections → `oq-ai-quality`; access/trust → `oq-security-journeys`; misleading verdict → `oq-checker-audit`; runner/fixture → `oq-automation`; claimed fix → `oq-retest`; planned coverage → `oq-test-design`. Another installed domain method may fit better. For disputed async/media transitions, select [incident tracing](incident-tracing.md). A method grants neither permissions nor tools: design-only stays unexecuted, and read-only diagnosis does not authorize repair.
+
+## Reopen a changed or disputed expectation
+
+When a new observation, answer, document revision or conflict changes the expected result, repeat the [requirements review](skill-start.md#review-the-expected-behavior) for the affected criterion. Link the deciding answer when it arrives, update the expected result and rerun the affected check when authorized. Match the new check to the promised outcome, including read-back after reopening when the result must persist or remain findable. Keep independent results and earlier evidence. Carry open questions into the handoff, including which criterion cannot be decided and who can answer. A passing check for one part cannot close the whole item when an unanswered question changes its acceptance.
 
 ## Preserve the person's task
 

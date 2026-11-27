@@ -8,6 +8,10 @@ Use this loop when an observation or worker result opens a consequential questio
 
 Use the current catalogue and [startup](skill-start.md) for any newly needed method: product behavior → `oq-explore`; meaning/corrections → `oq-ai-quality`; access/trust → `oq-security-journeys`; misleading verdict → `oq-checker-audit`; runner/fixture → `oq-automation`; claimed fix → `oq-retest`; planned coverage → `oq-test-design`. Another installed domain method may fit better. For disputed async/media transitions, select [incident tracing](incident-tracing.md). A method grants neither permissions nor tools: design-only stays unexecuted, and read-only diagnosis does not authorize repair.
 
+## Reopen a changed or disputed expectation
+
+When a new observation, answer, document revision or conflict changes the expected result, repeat the [requirements review](skill-start.md#review-the-expected-behavior) for the affected criterion. Link the deciding answer when it arrives, update the expected result and rerun the affected check when authorized. Match the new check to the promised outcome, including read-back after reopening when the result must persist or remain findable. Keep independent results and earlier evidence. Carry open questions into the handoff, including which criterion cannot be decided and who can answer. A passing check for one part cannot close the whole item when an unanswered question changes its acceptance.
+
 ## Preserve the person's task
 
 An Admin control, API shortcut or alternate device may help localize a failure; it does not replace the requested HR role, UI action or native runtime. Keep the original obligation open and continue attainable parts. A newly noticed unrelated risk is a proposed follow-up, not permission to spend the remaining scope on it.

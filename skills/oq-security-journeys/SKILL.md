@@ -6,7 +6,7 @@ license: "MIT; see LICENSE.txt for copyright and upstream notices."
 
 # Prove the feature's security boundary
 
-After loading, name this method and purpose once before QA actions; follow [startup](references/_shared/skill-start.md) for paths and delegation.
+After loading, name this method and purpose once before QA actions; follow [startup](references/_shared/skill-start.md) to verify discovery and review requirements.
 
 Investigate the control relevant to the requested feature: who may act, what remains data, which origin may read, where the server may connect or what an AI tool may do. An ownership requirement already makes access testing part of acceptance.
 

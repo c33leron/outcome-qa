@@ -7,6 +7,7 @@ Use only when asked about release readiness, broad acceptance or a go/no-go reco
 - Identify the release/build, selected scope, support variants and agreed release criteria. Check changed requirements and superseded evidence.
 - Include a healthy smoke through the critical user journey and its promised final effect. A login or health endpoint alone is not a substitute for checkout, delivered message, completed report or whichever outcome matters.
 - Reconcile each critical criterion with executed evidence, a known defect, a blocked check, an explicit omission or an unresolved expectation. Check pagination/truncated requirements before calling the map complete.
+- Surface material requirement questions before closing the affected item. Report which check passed and which decision remains open. An unanswered acceptance question prevents a ready recommendation for the affected scope.
 - Keep reproduced blockers and meaningful regressions visible even when neighboring tests passed. State mitigations/workarounds only where observed or clearly proposed.
 - Check restoration of test data and any uncertainty after writes. Distinguish remaining test residue from product defects.
 

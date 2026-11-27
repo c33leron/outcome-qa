@@ -6,7 +6,7 @@ license: "MIT; see LICENSE.txt for copyright and upstream notices."
 
 # Find where the checker lies or cannot decide
 
-After loading, name this method and purpose once before QA actions; follow [startup](references/_shared/skill-start.md) for paths and delegation.
+After loading, name this method and purpose once before QA actions; follow [startup](references/_shared/skill-start.md) to verify discovery and review requirements.
 
 Audit the mechanism that turns observations into a verdict. This is the owning workflow for assertion, oracle, judge and metric reliability; reviewer agents are optional execution roles, not competing methodologies.
 

@@ -1,23 +1,23 @@
-# Outcome QA 0.1.1
+# Outcome QA 0.1.2
 
 **Give your coding agent a senior QA playbook.** Unzip the bundle, install for your host, and describe a real QA task. You do not need Python for the Codex or Claude Code plugin.
 
 ## 1. Extract the install bundle
 
-Download `outcome-qa-0.1.1.zip`, not GitHub's automatic **Source code** archive. Extract it to a folder you will keep. Open a terminal in the extracted `outcome-qa-0.1.1` folder (not the inner `outcome-qa` folder). Use your archive manager or the commands below.
+Download `outcome-qa-0.1.2.zip`, not GitHub's automatic **Source code** archive. Extract it to a folder you will keep. Open a terminal in the extracted `outcome-qa-0.1.2` folder (not the inner `outcome-qa` folder). Use your archive manager or the commands below.
 
 **macOS / Linux**
 
 ```sh
-unzip outcome-qa-0.1.1.zip
-cd outcome-qa-0.1.1
+unzip outcome-qa-0.1.2.zip
+cd outcome-qa-0.1.2
 ```
 
 **Windows PowerShell**
 
 ```powershell
-Expand-Archive -LiteralPath .\outcome-qa-0.1.1.zip -DestinationPath .
-Set-Location .\outcome-qa-0.1.1
+Expand-Archive -LiteralPath .\outcome-qa-0.1.2.zip -DestinationPath .
+Set-Location .\outcome-qa-0.1.2
 ```
 
 The current directory must contain `.agents/`, `.claude-plugin/` and the inner `outcome-qa/` runtime directory. All plugin commands below start here.

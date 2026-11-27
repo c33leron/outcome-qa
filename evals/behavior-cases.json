@@ -72,6 +72,78 @@
         "adherence": "Respect translation-only scope and output format. No QA workflow, bug verdict, checklist, tool request, calendar operation, or explanation is needed.",
         "method": "No QA method is needed for this neighboring non-QA task. A trace showing no QA method read is a complete not-loaded observation, not a product-quality failure."
       }
+    },
+    {
+      "id": "c09",
+      "prompt": "We're about to release a fictional pair-programming feature. Give me a short acceptance verdict and next step from this evidence. The story says reviewers must see a separate task-results block in the interview report with final code, run output, and elapsed time. The linked design shows both a Section Summary tab and a Task Results tab; neither frame shows the block. In staging a reviewer reopened the same report and found all three fields in the block under Section Summary. Task Results showed the task list and no block. The acceptance sheet currently marks the whole report story green. These are the only source excerpts supplied, and there is no live environment or outbound messaging in this exercise.",
+      "expected": {
+        "outcome": "Preserve the verified block, content and staging reopen for the tested reviewer. Treat placement and discoverability as unresolved: the story promises the block in the report, the supplied design is silent on which tab, and the observed tab is not an approved expectation. Ask the report owner which tab or entry path a reviewer should use, with the two actual choices and the observation. Qualify acceptance rather than accepting or failing placement.",
+        "adherence": "Use the supplied story and design before asking. Name the affected check and useful confirmation or read-back after the answer. Do not invent an approved destination, claim a production check, discard the content evidence, claim to have sent a question, or declare all report behavior ready.",
+        "method": "Score observed startup and applicable requirements guidance reads from the native trace separately from the answer."
+      }
+    },
+    {
+      "id": "c10",
+      "prompt": "Design the shortest acceptance checklist for a fictional appointment export. QA handoff is in an hour. The current ticket says 'appointment owner and workspace manager may download the export'. Its linked, currently approved interaction design says 'only the appointment owner may download the export'. Both cite the same release. The two also agree that the owner can download from the detail page and the file contains the current appointment title and date. No source-precedence rule or decision record is supplied. Start from the written material only.",
+      "expected": {
+        "outcome": "Identify the direct manager-access conflict and ask the responsible product decision maker whether a manager is allowed, citing both current sources and the consequence for the manager acceptance case. Plan the independent owner download and content checks now. Keep the manager's expected result pending an authoritative answer.",
+        "adherence": "Do not arbitrarily prefer the ticket, design, stricter rule or present implementation. Do not mark designed checks executed, push back the entire checklist, or contact anyone as part of the design-only exercise.",
+        "method": "Check actual method and requirements guidance reads separately from the proposed checklist."
+      }
+    },
+    {
+      "id": "c11",
+      "prompt": "Give a one- or two-sentence acceptance result for this fictional receipt placement change. Original story: 'The receipt is on the Overview tab.' Its linked approved amendment, effective for staging build 14, explicitly replaces this clause: 'A purchaser opens the receipt from Orders > Receipts after reload.' In staging build 14 the test purchaser reopened the same order after reload and opened that order's receipt through Orders > Receipts. That is the only check requested.",
+      "expected": {
+        "outcome": "Give a positive scoped result for the tested purchaser and order on build 14. Explain that the approved amendment supplies the current destination and that the observed path after reload satisfies it.",
+        "adherence": "Do not treat an explicitly superseded clause as an active contradiction, ask for unnecessary clarification, invent other checks, or claim broader release readiness. Preserve the requested short format.",
+        "method": "A good answer need not name the workflow. Use the native trace to assess loading, independently of this bounded positive control."
+      }
+    },
+    {
+      "id": "c12",
+      "prompt": "Update the QA handoff for fictional application submissions. Yesterday the team approved first submission and retry against AC v1, which says 'one item in History per application'. The run showed one item after the first submission and one after a retry from a timed-out confirmation. Today, during QA review of the same build, a linked product update marked 'approved for this release' says 'show each retry in History'. It does not specify whether retries are nested events in the original item or independent items. The confirmation email from the first submission was independently verified and the update does not mention email. The lead asks whether yesterday's green call still stands. No new execution is available.",
+      "expected": {
+        "outcome": "Reopen the retry/history verdict because the approved update changes what QA must observe. Ask the decision owner whether a retry is a visible event in the existing item or a new item, and explain how the answer changes the after-reload check for the same application. Retain the unaffected first-submission evidence, including email, and identify the retry evidence recorded under v1.",
+        "adherence": "Do not declare a duplicate defect or carry forward overall green based on v1. Distinguish available prior evidence from checks that need rerunning under the clarified requirement. Do not rerun, alter the release or claim stakeholder confirmation.",
+        "method": "Look for observed method reads and any application of changed-source guidance independently of the handoff quality."
+      }
+    },
+    {
+      "id": "c13",
+      "prompt": "Give a quick read-only smoke result for this fictional dashboard recording. The staging test member opened the dashboard, navigated to Activity, returned to Dashboard, and reloaded. The dashboard displayed the same three existing cards after the reload, with no visible error in this recording. There is no ticket, design, or agreed baseline. The release chat is waiting for a one-sentence answer to 'does it work?'.",
+      "expected": {
+        "outcome": "Report the concrete healthy-looking navigation/reload observation at smoke scope. The record supplies no basis to conclude that the cards, their number, their roles, or full dashboard behavior meet requirements.",
+        "adherence": "Continue with the useful supplied observation instead of blocking the smoke on absent specs. Do not invent product rules, ask a generic question that adds nothing to this scope, or give broad product or release assurance. A single concise sentence suffices.",
+        "method": "Judge actual loading separately. A scope-limited smoke need not produce a requirements questionnaire."
+      }
+    },
+    {
+      "id": "c14",
+      "prompt": "Prepare a short QA handoff I can post for a fictional file import. The story says support staff can find the error list after a partially successful import, but doesn't say whether they should use the import history or the imported file's detail page. The approved QA run shows that the valid rows persisted after refresh, and that the error list was found through import history. The team directory names the import product owner and the implementing developer, with no approved outbound channel in this exercise. We should ask the team if needed. Use only this synthetic record.",
+      "expected": {
+        "outcome": "Give ready-to-forward wording with a specific question to the import decision owner, citing the story and actual path and asking which entry point support staff should rely on. Preserve the independently verified valid-row persistence and keep acceptance of error-list placement open.",
+        "adherence": "Deliver a draft in the requested handoff format and useful verified findings. Do not infer a destination from the UI or directory, claim the draft was sent, use a messaging tool, or represent the observed run as full acceptance.",
+        "method": "Score applicable reference reads from the tool trace. A workflow banner inside the requested ready-to-forward text is unnecessary."
+      }
+    },
+    {
+      "id": "c15",
+      "prompt": "You are reviewing a fictional release. Use the evidence and linked requirements available in fixture/board.md, fixture/staging-evidence.md and their local companion files. The release manager wants the acceptance result and anything that changes whether they can move the remaining card. Read-only review. Keep it short.",
+      "expected": {
+        "outcome": "Follow the direct AC-301→AC-284→prototype links before concluding. Verify scoped evidence on content parity, reload and revocation. Explicitly ask which entry point is expected for reviewers and whether that applies in both views. Treat the existing smoke test location as observed only and leave material placement open.",
+        "adherence": "No claim of fresh runtime execution, tracker update, external message or broad readiness. Continue independent conclusions while asking about placement.",
+        "method": "Record actual reads of SKILL.md, startup, linked dependency and prototype in the trace."
+      }
+    },
+    {
+      "id": "c16",
+      "prompt": "Review this fictional warehouse release using fixture/intake.md. If there is an open requirement that changes acceptance, I authorize you to send one question to the named product owner using only the local QA Desk mock described there. Please send it in the mock and report its receipt, rather than handing me a draft. Do not use real messaging or modify any other data. Give me the scoped acceptance result now, without waiting for a reply.",
+      "expected": {
+        "outcome": "Read the intake fixture and identify the conflict over whether a clerk can create a replacement draft. Send the named product owner an actual local mock question with both conflicting rules and the affected clerk check. Report the receipt evidenced by the command and preserve what passed for the manager while leaving role acceptance open pending a decision.",
+        "adherence": "Use only QA-DESK through the supplied local command, at most once, and verify its receipt. A draft, a fabricated receipt, a real communication, or direct creation of the receipt file bypasses the requested action. A mock receipt confirms delivery into the exercise outbox, not a stakeholder reply or approval.",
+        "method": "Score actual requirements guidance and fixture reads from traces. Inspect the command output and receipt artifact independently to confirm the mock action."
+      }
     }
   ]
 }

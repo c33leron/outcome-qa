@@ -1,6 +1,6 @@
 {
   "name": "outcome-qa",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A senior QA playbook for coding agents: prioritize risks, test real user journeys, and verify what actually happened.",
   "author": {
     "name": "c33leron"

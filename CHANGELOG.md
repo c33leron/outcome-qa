@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2 — 2026-11-27
+
+- All seven methods share an early review of requirements and linked decisions. When a material gap remains, ask a concrete question and keep the affected verdict open while independent checks continue.
+- Reopen affected acceptance criteria after a change or clarification. Keep previously verified evidence for independent behavior.
+- Eight development cases cover linked requirements, missing placement, conflicting or superseded sources, changed retry expectations, smoke testing without a specification, and both drafted and authorized mock questions.
+
 ## 0.1.1 — 2026-11-15
 
 - Shared adaptive decisions are available from all seven methods, without requiring an extra loop for a straightforward verified result.

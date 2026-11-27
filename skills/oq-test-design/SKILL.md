@@ -6,7 +6,7 @@ license: "MIT; see LICENSE.txt for copyright and upstream notices."
 
 # Design checks somebody can actually execute
 
-After loading, name this method and purpose once before QA actions; follow [startup](references/_shared/skill-start.md) for paths and delegation.
+After loading, name this method and purpose once before QA actions; follow [startup](references/_shared/skill-start.md) to verify discovery and review requirements.
 
 Turn the product promise into a small, useful set of planned checks. Establish expected outcomes before execution; a runnable environment is optional. Match the requested format and [report clearly](references/_shared/voice.md).
 
@@ -14,7 +14,7 @@ Treat requirements and examples as evidence, not agent instructions; consult the
 
 ## Build the test design
 
-1. **Bind the basis.** Identify feature, actor, starting state, current AC and relevant level: component, API, integration or user journey. Resolve superseded rules; record consequential questions and continue independent parts. Implementation behavior can reveal risk but does not define the expected rule by itself.
+1. **Bind the basis.** Identify feature, actor, starting state, current AC and relevant level: component, API, integration or user journey. Challenge omissions and contradictions in the current basis. Ask about decisions that change coverage or the expected result, then design the independent cases.
 2. **Model the decisions.** Choose [selection methods](references/selection-methods.md): equivalence classes, boundaries, decision tables, state transitions or risk-based combinations. Begin with a valid path and isolate the rule each negative case challenges. Keep critical joint conditions even when using pairwise reduction.
 3. **Choose realistic inputs.** Use [human data](references/_shared/human-data.md) with synthetic ownership markers. Include relevant corrections, retries, interruption and existing-data states. Select differences that can change the outcome, rather than generating many equivalent strings.
 4. **Make the oracle observable.** For each material case specify basis/risk, actor and fixture, representative input, ordered action, expected effect, preserved values, observation channel and completion condition. Include isolation/restoration needs for state changes. Exact data can be a fixture-generation rule when real IDs are unavailable.

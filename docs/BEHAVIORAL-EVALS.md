@@ -3,11 +3,16 @@
 This offline Python 3.10+ helper prepares task-only packets and checks **external,
 independently supplied adjudications** against frozen inputs and raw artifacts.
 It does not call a model, collect telemetry, or decide semantic truth with regexes.
-The eight synthetic cases generalize decision, actor, discovery, durable-outcome,
-cleanup and continuation failures, with healthy and non-QA controls. These are
-public **development material, not a concealed benchmark**. Seeing the source or
-rubric contaminates a performer run; disclose that rather than calling it blind.
-Unit tests establish the helper's boundary behavior, not agent quality.
+The sixteen synthetic cases cover decision, actor, discovery, durable-outcome,
+cleanup, continuation, and requirements-review failures. The requirements cases
+exercise missing artifact placement, conflicting and superseded sources, a change
+after earlier acceptance, a smoke with no specification, linked local requirements,
+an owner question ready to forward, and delivery through a local mock. Healthy
+and non-QA controls cover a clear requirement and a simple translation. These
+public **development cases** have
+visible rubrics. Disclose when a performer has seen the source or rubric before a
+run. Unit tests establish the helper's boundary behavior. Model behavior requires
+recorded runs and independent review.
 
 ## 1. Freeze the experiment before dispatch
 
@@ -34,7 +39,7 @@ canonical frozen source with reviewer expectations is saved as `source.json`;
 `packets/p000001.json` and subsequent sequential filenames contain **only**
 `id` and `prompt`. Filenames are independent of logical case IDs, so `Case` and
 `case` remain distinct on case-insensitive filesystems. Packet SHA-256 values
-cover its exact bytes, including all supplied task/evidence text, not the rubric.
+cover its exact bytes, including any evidence embedded in the prompt.
 The manifest pins arms, source, packets and every case × arm × repeat slot.
 Preparation refuses to overwrite an existing directory. It writes a private
 sibling staging directory before reserving the output; a staging-write failure
@@ -44,13 +49,30 @@ unchanged files and empty owned directories, never recursively deletes additions
 A changed file or interrupted partial write may leave a `.NAME.prepare-*` staging
 directory for inspection; do not blindly delete it.
 
-Give each performer only its packet (and the intended arm setup), never the
-source, hidden expectations or reviews. Keep unrelated history and candidate
+Give each performer its packet, the intended arm setup, and any case fixture
+described below. Keep the source, reviewer expectations and reviews out of the
+performer's workspace. Keep unrelated history and candidate
 identity out where feasible; record unavoidable contamination. Use the same
 input bytes for matched arms. An explicit prior-skill trial is not a
 skill-disabled baseline. Record actual host/model/configuration and any
 uncontrolled differences in trial notes and raw trace; do not infer uplift from
 labels. Arm hashes pin declared source, not what the agent actually loaded.
+
+### Local fixtures for c15 and c16
+
+For each trial of c15 or c16, create a fresh working directory and copy the
+contents of `evals/behavior-fixtures/<case-id>/` into its `fixture/` directory.
+Run the performer from that working directory. Keep a retained snapshot and
+record SHA-256 hashes of the fixture files by relative path in the trial notes.
+Use identical fixture bytes across arms and repeats. The helper hashes the packet
+but does not copy, hash or mount these companion files.
+
+For c15, the fixtures are read-only. For c16, allow only the mock's local receipt
+write beside `fixture/` and use a fresh directory without an existing receipt.
+Keep real messaging connectors unavailable. Preserve the command trace and any
+`qa-desk-receipt.json` as raw evidence. The mock receipt confirms only a local
+outbox write and contains no stakeholder reply. The c14 draft exercise needs no
+fixture or write access.
 
 Register all planned attempts **before** dispatch. A failed provider/setup call,
 timeout or malformed run retains its slot; never overwrite it with a successful

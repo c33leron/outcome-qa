@@ -6,7 +6,7 @@ license: "MIT; see LICENSE.txt for copyright and upstream notices."
 
 # Verify the original failure, not an easier substitute
 
-After loading, name this method and purpose once before QA actions; follow [startup](references/_shared/skill-start.md) for paths and delegation.
+After loading, name this method and purpose once before QA actions; follow [startup](references/_shared/skill-start.md) to verify discovery and review requirements.
 
 Answer whether the reported defect is resolved under the current agreed rule. Keep confirmation separate from neighboring regression and [communicate the boundary plainly](references/_shared/voice.md).
 
